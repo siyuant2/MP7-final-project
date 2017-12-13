@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CS125 MP7 Final Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script type="text/javascript" src="untitled.js"></script>
+  
+
+  
+      <link rel="stylesheet" href="css/style.css">
+      <script language="JavaScript">
+  
+    function encryptButtonHit() {
+      
+      var data = getInput();
+      // calling your code here
+      var cipher = encrypt(data.clear, data.key);
+      
+      var ele = document.getElementById('result');
+      ele.innerHTML = cipher;
+    }
+    
+    function decryptButtonHit() {
+      
+      var data  = getInput();
+      // calling your code here
+      var clear = decrypt(data.cipher, data.key);
+      
+      // now set the element
+      var ele = document.getElementById('result');
+      ele.innerHTML = clear;
+    }
+    
+    function getInput(){
+      var data={};
+      var ele = document.getElementById("key");
+      var idx = ele.selectedIndex;
+      data.key = parseInt(ele[idx].value);
+      data.clear =document.getElementById("clear").value;
+      data.cipher=document.getElementById("cipher").value;
+      // note we are using a JavaScript Object
+      // to return multiple pieces of data
+      return data;
+    }
+
+ </script>
+
+  
+</head>
+
+<body>
+  <div class="form">
+      
+     
+      
+      <div class="tab-content">
+        <div id="content">  
+        <div class = "container" >
+          <h1>CS125 MP7 Final Project</h1>
+          <p><font color = "white">a very simple substitution cipher<font></p>
+        </div>
+      </div>
+      <div class="container">
+  <h3>
+      Select Your Key:
+  </h3>
+  <p>
+    <select id="key">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+    </select>
+  </p>
+          
+  <h3>
+    Message Encrypt:
+  </h3>
+  <p>
+    <input type="text" id="clear" value="" size=10/>
+    <button onclick="encryptButtonHit();">Encrypt</button>     
+  </p>
+  <h3>
+    Messge Decrypt:
+  </h3>
+      <input type="text" id="cipher" value="" size=10/>
+      <button onclick="decryptButtonHit();">Decrypt</button>           
+    <div id="result" class="result">
+      <font color = "black">message will show up here</font>
+    </div>
+    
+</div>
+
+</body>
+</html>
